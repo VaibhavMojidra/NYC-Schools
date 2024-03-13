@@ -2,6 +2,5 @@
 <resources>
     <style name="Theme.NYCSchools" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/backgroundColor</item>
-        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

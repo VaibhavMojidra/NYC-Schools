@@ -74,5 +74,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
 
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
     implementation("androidx.navigation:navigation-compose:$nav_version")
 }
