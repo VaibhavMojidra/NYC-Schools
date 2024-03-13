@@ -3,4 +3,6 @@
     <color name="appPrimaryColor">#FF007AFF</color>
     <color name="backgroundColor">#FF000000</color>
     <color name="textColor">#FFF5F5F5</color>
+    <color name="screenDividerColor">#FF2E2E31</color>
+    <color name="lighterTextColor">#FFD8D8D8</color>
 </resources>

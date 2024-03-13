@@ -10,4 +10,6 @@
     <color name="appPrimaryColor">#FF007AFF</color>
     <color name="backgroundColor">#FFF2F2F7</color>
     <color name="textColor">#FF252525</color>
+    <color name="lighterTextColor">#FF595959</color>
+    <color name="screenDividerColor">#FFE0E0E1</color>
 </resources>
