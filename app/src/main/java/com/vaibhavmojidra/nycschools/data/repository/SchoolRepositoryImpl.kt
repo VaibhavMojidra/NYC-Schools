@@ -2,6 +2,7 @@ package com.vaibhavmojidra.nycschools.data.repository
 
 import com.vaibhavmojidra.nycschools.data.api.SchoolDataAPIService
 import com.vaibhavmojidra.nycschools.data.model.SchoolList
+import com.vaibhavmojidra.nycschools.data.model.SchoolSatScoreListItem
 import com.vaibhavmojidra.nycschools.data.result.Result
 import com.vaibhavmojidra.nycschools.domain.repository.SchoolRepository
 
@@ -19,5 +20,10 @@ class SchoolRepositoryImpl(private val schoolDataAPIService: SchoolDataAPIServic
             Result.Error(e)
         }
     }
+
+    override suspend fun getSATScore(dbn: String): Result<SchoolSatScoreListItem> {
+        TODO("Not yet implemented")
+    }
+
 
 }

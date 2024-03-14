@@ -1,6 +1,7 @@
 package com.vaibhavmojidra.nycschools.data.api
 
 import com.vaibhavmojidra.nycschools.data.model.SchoolList
+import com.vaibhavmojidra.nycschools.data.model.SchoolListItem
 import com.vaibhavmojidra.nycschools.data.model.SchoolSatScoreList
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
@@ -12,6 +13,6 @@ interface SchoolDataAPIService {
     suspend fun getSchoolList():Response<SchoolList>
 
     @GET("/resource/f9bf-2cp4.json")
-    suspend fun getSchoolSatScoreListItemWithDbn(@Query("dbn") dbn:String):Response<SchoolSatScoreList>
+    suspend fun getSchoolSatScoreListItemWithDbn(@Query("dbn") dbn:String):Response<SchoolListItem>
 
 }

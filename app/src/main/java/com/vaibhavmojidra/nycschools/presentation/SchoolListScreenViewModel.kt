@@ -10,13 +10,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class SchoolListScreenViewModel(private val getSchoolListUseCase: GetSchoolListUseCase):ViewModel() {
-    private val _schoolList= MutableStateFlow<Result<SchoolList>>(Result.Loading)
-    val schoolList:StateFlow<Result<SchoolList>> get() = _schoolList
+class SchoolListScreenViewModel(private val getSchoolListUseCase: GetSchoolListUseCase) :
+    ViewModel() {
+    private val _schoolList = MutableStateFlow<Result<SchoolList>>(Result.Loading)
+    val schoolList: StateFlow<Result<SchoolList>> get() = _schoolList
 
-    fun fetchSchoolList(){
+    fun fetchSchoolList() {
         viewModelScope.launch(Dispatchers.IO) {
-            _schoolList.value=getSchoolListUseCase()
+            _schoolList.value = getSchoolListUseCase()
         }
     }
 }
