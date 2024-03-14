@@ -46,9 +46,7 @@ fun SchoolListScreen(navigateToNextScreen:(schoolListItem:SchoolListItem)->Unit,
             is Result.Error -> {
                 Toast.makeText(context,schoolListResult.exception.message.toString(),Toast.LENGTH_LONG).show()
             }
-            Result.Loading -> {
-                Loader()
-            }
+            Result.Loading -> Loader()
             is Result.Success -> {
                 val schoolList=schoolListResult.data
                 SchoolListBlock(schoolList,navigateToNextScreen)

@@ -27,8 +27,7 @@ import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
-    private val schoolDataAPIService: SchoolDataAPIService=SchoolDataRetrofitInstance.getRetrofitInstance()
-        .create(SchoolDataAPIService::class.java)
+    private val schoolDataAPIService: SchoolDataAPIService=SchoolDataRetrofitInstance.getRetrofitInstance().create(SchoolDataAPIService::class.java)
     private val schoolRepositoryImpl:SchoolRepositoryImpl=SchoolRepositoryImpl(schoolDataAPIService)
     private val schoolListScreenViewModel: SchoolListScreenViewModel by viewModels {
         SchoolListScreenViewModelFactory(GetSchoolListUseCase(schoolRepositoryImpl))

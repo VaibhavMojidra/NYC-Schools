@@ -10,28 +10,28 @@ import com.vaibhavmojidra.nycschools.R
 import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
 @Composable
-fun SchoolInfoBlock(schoolName:String,
-                    schoolLocation:String,
-                    schoolWebsite: String,
-                    schoolEmail: String,
-                    schoolPhoneNumber: String,
+fun SchoolInfoBlock(schoolName:String?,
+                    schoolLocation:String?,
+                    schoolEmail: String?,
+                    schoolPhoneNumber: String?,
                     modifier: Modifier = Modifier){
     Column {
         //Text to show school's name
-        Text(text = schoolName, fontSize = 24.sp, color = colorResource(
+        schoolName?.let { Text(text = schoolName, fontSize = 24.sp, color = colorResource(
             R.color.textColor)
-        )
+        )}
         //Text to show school's location
-        Text(text = schoolLocation,color = colorResource(
-            R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
-
-        //Text to show school's website
-        Text(text = schoolWebsite,color = colorResource(R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
+        schoolLocation?.let { Text(text = schoolLocation,color = colorResource(
+            R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp) }
 
         //Text to show school's email
-        Text(text = schoolEmail,color = colorResource(R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
+        schoolEmail?.let {
+            Text(text = schoolEmail,color = colorResource(R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
+        }
 
         //Text to show school's phone number
-        Text(text = schoolPhoneNumber,color = colorResource(R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
+        schoolPhoneNumber?.let {
+            Text(text = schoolPhoneNumber,color = colorResource(R.color.lighterTextColor), fontFamily = CustomFontFamily.THIN_TEXT, fontSize = 14.sp)
+        }
     }
 }

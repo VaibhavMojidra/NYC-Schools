@@ -1,7 +1,5 @@
 package com.vaibhavmojidra.nycschools.presentation
 
-import android.os.Bundle
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -19,11 +17,11 @@ fun MainNavHost(navController:NavHostController= rememberNavController(),schoolL
 
         composable(route=Routes.SCHOOL_LIST_SCREEN){
             SchoolListScreen(navigateToNextScreen = {
-                navController.navigate("${Routes.SCHOOL_DETAILS_SCREEN}/${it.dbn}/${it.school_name}/${it.location}/${it.website}/${it.school_email}/${it.phone_number}")
+                navController.navigate("${Routes.SCHOOL_DETAILS_SCREEN}/${it.dbn}/${it.school_name}/${it.location}/${it.school_email}/${it.phone_number}")
             },schoolListScreenViewModel)
         }
 
-        composable(route="${Routes.SCHOOL_DETAILS_SCREEN}/{dbn}/{school_name}/{location}/{website}/{school_email}/{phone_number}", arguments = listOf(
+        composable(route="${Routes.SCHOOL_DETAILS_SCREEN}/{dbn}/{school_name}/{location}/{school_email}/{phone_number}", arguments = listOf(
             navArgument("dbn"){
                 type= NavType.StringType
             },
@@ -31,9 +29,6 @@ fun MainNavHost(navController:NavHostController= rememberNavController(),schoolL
                 type= NavType.StringType
             },
             navArgument("location"){
-                type= NavType.StringType
-            },
-            navArgument("website"){
                 type= NavType.StringType
             },
             navArgument("school_email"){
@@ -47,11 +42,12 @@ fun MainNavHost(navController:NavHostController= rememberNavController(),schoolL
             val dbn=it.arguments?.getString("dbn")
             val schoolName=it.arguments?.getString("school_name")
             val schoolLocation=it.arguments?.getString("location")
-            val schoolWebsite=it.arguments?.getString("website")
             val schoolEmail=it.arguments?.getString("school_email")
             val schoolPhoneNumber=it.arguments?.getString("phone_number")
 
-            SchoolDetailScreen(navController,schoolDetailScreenViewModel,dbn!!,schoolName!!,schoolLocation!!,schoolWebsite!!,schoolEmail!!,schoolPhoneNumber!!)
+            SchoolDetailScreen(navController,schoolDetailScreenViewModel,dbn!!,schoolName,schoolLocation,schoolEmail,schoolPhoneNumber)
         }
+
+
     }
 }

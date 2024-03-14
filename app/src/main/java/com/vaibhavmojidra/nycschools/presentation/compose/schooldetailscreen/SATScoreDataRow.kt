@@ -10,17 +10,18 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vaibhavmojidra.nycschools.R
+import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
 @Composable
 fun SATScoreDataRow(satSubject:String,satScore:String,modifier: Modifier = Modifier,){
     Row(modifier=modifier.fillMaxWidth()){
         Text(text = satSubject,modifier= modifier
             .padding(vertical = 5.dp)
-            .weight(0.5f),fontSize = 18.sp, color = colorResource(R.color.textColor)
+            .weight(0.5f),fontSize = 18.sp, fontFamily = CustomFontFamily.NORMAL_TEXT,color = colorResource(R.color.textColor)
         )
         Text(text = satScore,modifier= modifier
             .padding(vertical = 5.dp)
-            .weight(0.5f),fontSize = 18.sp, color = colorResource(R.color.textColor)
+            .weight(0.5f),fontSize = 18.sp, fontFamily = CustomFontFamily.NORMAL_TEXT, color = colorResource(R.color.textColor)
         )
     }
 }
