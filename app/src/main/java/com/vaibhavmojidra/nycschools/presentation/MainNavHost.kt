@@ -14,12 +14,11 @@ import com.vaibhavmojidra.nycschools.presentation.compose.schoollistscreen.Schoo
 import com.vaibhavmojidra.nycschools.presentation.constants.Routes
 
 @Composable
-fun MainNavHost(navController:NavHostController= rememberNavController(),schoolListScreenViewModel: SchoolListScreenViewModel){
+fun MainNavHost(navController:NavHostController= rememberNavController(),schoolListScreenViewModel: SchoolListScreenViewModel,schoolDetailScreenViewModel: SchoolDetailScreenViewModel){
     NavHost(navController=navController, startDestination = Routes.SCHOOL_LIST_SCREEN){
 
         composable(route=Routes.SCHOOL_LIST_SCREEN){
             SchoolListScreen(navigateToNextScreen = {
-                Log.i("MyTag","1:${it.dbn}\n2:${it.school_name}\n3:${it.location}\n4:${it.website}\n5:${it.school_email}\n6:${it.phone_number}")
                 navController.navigate("${Routes.SCHOOL_DETAILS_SCREEN}/${it.dbn}/${it.school_name}/${it.location}/${it.website}/${it.school_email}/${it.phone_number}")
             },schoolListScreenViewModel)
         }
@@ -52,9 +51,7 @@ fun MainNavHost(navController:NavHostController= rememberNavController(),schoolL
             val schoolEmail=it.arguments?.getString("school_email")
             val schoolPhoneNumber=it.arguments?.getString("phone_number")
 
-            Log.i("MyTag","1:$dbn\n2:$schoolName\n3:$schoolLocation\n4:$schoolWebsite\n5:$schoolEmail\n6:$schoolPhoneNumber")
-
-            SchoolDetailScreen(navController,dbn!!,schoolName!!,schoolLocation!!,schoolWebsite!!,schoolEmail!!,schoolPhoneNumber!!)
+            SchoolDetailScreen(navController,schoolDetailScreenViewModel,dbn!!,schoolName!!,schoolLocation!!,schoolWebsite!!,schoolEmail!!,schoolPhoneNumber!!)
         }
     }
 }

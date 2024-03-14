@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class SchoolDetailScreenViewModel(private val getSchoolSATScoreUseCase: GetSchoolSATScoreUseCase):ViewModel() {
 
     private val _satScoreData= MutableStateFlow<Result<SchoolSatScoreListItem>>(Result.Loading)
+
     val satScoreData get()=_satScoreData
 
     fun fetchSATScore(dbn:String){

@@ -20,19 +20,22 @@ import com.vaibhavmojidra.nycschools.data.repository.SchoolRepositoryImpl
 import com.vaibhavmojidra.nycschools.data.result.Result
 import com.vaibhavmojidra.nycschools.domain.repository.SchoolRepository
 import com.vaibhavmojidra.nycschools.domain.usecase.GetSchoolListUseCase
+import com.vaibhavmojidra.nycschools.domain.usecase.GetSchoolSATScoreUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
+    private val schoolDataAPIService: SchoolDataAPIService=SchoolDataRetrofitInstance.getRetrofitInstance()
+        .create(SchoolDataAPIService::class.java)
+    private val schoolRepositoryImpl:SchoolRepositoryImpl=SchoolRepositoryImpl(schoolDataAPIService)
     private val schoolListScreenViewModel: SchoolListScreenViewModel by viewModels {
-        SchoolListScreenViewModelFactory(GetSchoolListUseCase(SchoolRepositoryImpl(
-            SchoolDataRetrofitInstance.getRetrofitInstance()
-                .create(SchoolDataAPIService::class.java)
-        )
-        )
-        )
+        SchoolListScreenViewModelFactory(GetSchoolListUseCase(schoolRepositoryImpl))
+    }
+
+    private val schoolDetailScreenViewModel:SchoolDetailScreenViewModel by viewModels {
+        SchoolDetailScreenViewModelFactory(GetSchoolSATScoreUseCase(schoolRepositoryImpl))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +47,9 @@ class MainActivity : ComponentActivity() {
                     .fillMaxSize()
                     .background(color = colorResource(R.color.backgroundColor))
             ) {
-                MainNavHost(schoolListScreenViewModel = schoolListScreenViewModel)
+                MainNavHost(schoolListScreenViewModel = schoolListScreenViewModel,
+                    schoolDetailScreenViewModel = schoolDetailScreenViewModel
+                )
             }
         }
     }
