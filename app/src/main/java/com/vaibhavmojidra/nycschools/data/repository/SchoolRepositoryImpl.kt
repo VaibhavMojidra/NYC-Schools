@@ -6,7 +6,11 @@ import com.vaibhavmojidra.nycschools.data.model.SchoolSatScoreListItem
 import com.vaibhavmojidra.nycschools.data.result.Result
 import com.vaibhavmojidra.nycschools.domain.repository.SchoolRepository
 
+
+//Implementation of repository class to fetch data from remote data source using retrofit and returning in a structured format.
 class SchoolRepositoryImpl(private val schoolDataAPIService: SchoolDataAPIService) : SchoolRepository {
+
+    //To fetch school's list making retrofit call
     override suspend fun getSchoolList(): Result<SchoolList> {
         return try {
             val response = schoolDataAPIService.getSchoolList()
@@ -21,12 +25,14 @@ class SchoolRepositoryImpl(private val schoolDataAPIService: SchoolDataAPIServic
         }
     }
 
+    //To fetch particular school's SAT Score with dbn number making retrofit call with query
     override suspend fun getSATScore(dbn: String): Result<SchoolSatScoreListItem> {
 
         return try {
             val response = schoolDataAPIService.getSchoolSatScoreListItemWithDbn(dbn)
             if(response.isSuccessful){
                 val schoolSatScoreList=response.body()
+                // As the response is in list format taking 0 index that is first value of list fetch as there will always single element list or empty list
                 var schoolSatScoreListItem: SchoolSatScoreListItem? =null
                 schoolSatScoreList?.let {
                     if(!it.isEmpty()){

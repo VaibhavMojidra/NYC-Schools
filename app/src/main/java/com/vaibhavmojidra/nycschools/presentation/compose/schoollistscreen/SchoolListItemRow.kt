@@ -15,10 +15,10 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vaibhavmojidra.nycschools.R
-import com.vaibhavmojidra.nycschools.data.model.SchoolList
 import com.vaibhavmojidra.nycschools.data.model.SchoolListItem
 import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
+//Composable to show single school list item of schools list in School List Screen
 @Composable
 fun SchoolListItemRow(
     schoolListItem: SchoolListItem,

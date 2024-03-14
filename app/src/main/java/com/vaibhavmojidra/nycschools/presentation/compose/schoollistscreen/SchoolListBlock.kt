@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import com.vaibhavmojidra.nycschools.data.model.SchoolList
 import com.vaibhavmojidra.nycschools.data.model.SchoolListItem
 
+//Composable to show list of schools in School List Screen
 @Composable
 fun SchoolListBlock(schoolList:SchoolList, navigateToNextScreen:(schoolListItem: SchoolListItem)->Unit, modifier:Modifier=Modifier){
     LazyColumn(

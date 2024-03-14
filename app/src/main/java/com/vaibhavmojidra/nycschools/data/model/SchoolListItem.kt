@@ -1,5 +1,7 @@
 package com.vaibhavmojidra.nycschools.data.model
 
+
+//Model class / data  class for single school data
 data class SchoolListItem(
     val academicopportunities1: String,
     val academicopportunities2: String,

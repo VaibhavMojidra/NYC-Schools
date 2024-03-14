@@ -9,6 +9,8 @@ import androidx.compose.ui.unit.sp
 import com.vaibhavmojidra.nycschools.R
 import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
+
+//School info's block in school detail screen excluding school sat score
 @Composable
 fun SchoolInfoBlock(schoolName:String?,
                     schoolLocation:String?,

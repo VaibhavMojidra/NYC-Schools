@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 
+//Composable for data or can say main block of displaying data in School detail list screen
 @Composable
 fun SchoolDetailDataBlock(schoolName:String?,
                           schoolLocation:String?,

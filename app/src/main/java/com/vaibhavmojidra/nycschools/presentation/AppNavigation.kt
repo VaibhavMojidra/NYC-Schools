@@ -1,6 +1,7 @@
 package com.vaibhavmojidra.nycschools.presentation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -11,11 +12,14 @@ import com.vaibhavmojidra.nycschools.presentation.compose.schooldetailscreen.Sch
 import com.vaibhavmojidra.nycschools.presentation.compose.schoollistscreen.SchoolListScreen
 import com.vaibhavmojidra.nycschools.presentation.constants.Routes
 
+
+//All the routing that is screens are configured over here for navigation
 @Composable
-fun MainNavHost(navController:NavHostController= rememberNavController(),schoolListScreenViewModel: SchoolListScreenViewModel,schoolDetailScreenViewModel: SchoolDetailScreenViewModel){
+fun AppNavigation(navController:NavHostController= rememberNavController()){
     NavHost(navController=navController, startDestination = Routes.SCHOOL_LIST_SCREEN){
 
         composable(route=Routes.SCHOOL_LIST_SCREEN){
+            val schoolListScreenViewModel:SchoolListScreenViewModel= hiltViewModel()
             SchoolListScreen(navigateToNextScreen = {
                 navController.navigate("${Routes.SCHOOL_DETAILS_SCREEN}/${it.dbn}/${it.school_name}/${it.location}/${it.school_email}/${it.phone_number}")
             },schoolListScreenViewModel)
@@ -39,6 +43,7 @@ fun MainNavHost(navController:NavHostController= rememberNavController(),schoolL
             },
         )){
 
+            val schoolDetailScreenViewModel:SchoolDetailScreenViewModel= hiltViewModel()
             val dbn=it.arguments?.getString("dbn")
             val schoolName=it.arguments?.getString("school_name")
             val schoolLocation=it.arguments?.getString("location")

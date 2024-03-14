@@ -20,6 +20,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.vaibhavmojidra.nycschools.R
 
+
+//Reusable composable for custom Title Bar
 @Composable
 fun TitleBar(navController: NavController,screenTitle:String="Default Screen Title"){
         Row(

@@ -12,6 +12,8 @@ import androidx.compose.ui.unit.sp
 import com.vaibhavmojidra.nycschools.R
 import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
+
+//This is reusable compose of single row in SAT Score table / data.
 @Composable
 fun SATScoreDataRow(satSubject:String,satScore:String,modifier: Modifier = Modifier,){
     Row(modifier=modifier.fillMaxWidth()){

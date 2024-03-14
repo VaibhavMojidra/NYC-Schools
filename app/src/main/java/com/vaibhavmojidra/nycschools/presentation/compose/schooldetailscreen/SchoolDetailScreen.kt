@@ -2,21 +2,18 @@ package com.vaibhavmojidra.nycschools.presentation.compose.schooldetailscreen
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.vaibhavmojidra.nycschools.data.result.Result
 import com.vaibhavmojidra.nycschools.presentation.SchoolDetailScreenViewModel
 import com.vaibhavmojidra.nycschools.presentation.compose.sharedcompose.Loader
 import com.vaibhavmojidra.nycschools.presentation.compose.sharedcompose.TitleBar
 
+
+//Composable School Detail screen all the composable related to School Detail screen are linked from here.
 @Composable
 fun SchoolDetailScreen(
     navController:NavController,

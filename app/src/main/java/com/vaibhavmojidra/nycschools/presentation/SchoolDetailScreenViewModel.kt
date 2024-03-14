@@ -5,12 +5,15 @@ import androidx.lifecycle.viewModelScope
 import com.vaibhavmojidra.nycschools.data.model.SchoolSatScoreListItem
 import com.vaibhavmojidra.nycschools.data.result.Result
 import com.vaibhavmojidra.nycschools.domain.usecase.GetSchoolSATScoreUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SchoolDetailScreenViewModel(private val getSchoolSATScoreUseCase: GetSchoolSATScoreUseCase):ViewModel() {
+//View model for managing data and ui related data manipulations for lifecycle School Detail Screen
+@HiltViewModel
+class SchoolDetailScreenViewModel @Inject constructor(private val getSchoolSATScoreUseCase: GetSchoolSATScoreUseCase):ViewModel() {
 
     private val _satScoreData= MutableStateFlow<Result<SchoolSatScoreListItem>>(Result.Loading)
 

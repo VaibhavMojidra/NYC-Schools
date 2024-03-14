@@ -5,7 +5,6 @@ import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -22,6 +21,7 @@ import com.vaibhavmojidra.nycschools.presentation.SchoolListScreenViewModel
 import com.vaibhavmojidra.nycschools.presentation.compose.sharedcompose.Loader
 import com.vaibhavmojidra.nycschools.presentation.constants.CustomFontFamily
 
+//Composable School List screen all the composable related to School List screen are linked from here.
 @Composable
 fun SchoolListScreen(navigateToNextScreen:(schoolListItem:SchoolListItem)->Unit,schoolListScreenViewModel:SchoolListScreenViewModel,modifier: Modifier=Modifier) {
 
