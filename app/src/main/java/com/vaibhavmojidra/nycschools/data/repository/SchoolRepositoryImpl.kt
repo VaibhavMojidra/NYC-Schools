@@ -31,15 +31,13 @@ class SchoolRepositoryImpl(private val schoolDataAPIService: SchoolDataAPIServic
         return try {
             val response = schoolDataAPIService.getSchoolSatScoreListItemWithDbn(dbn)
             if(response.isSuccessful){
-                val schoolSatScoreList=response.body()
                 // As the response is in list format taking 0 index that is first value of list fetch as there will always single element list or empty list
-                var schoolSatScoreListItem: SchoolSatScoreListItem? =null
-                schoolSatScoreList?.let {
-                    if(!it.isEmpty()){
-                        schoolSatScoreListItem= it[0]
-                    }
-                }?: Result.Error(Exception("No SAT Score Found"))
-                schoolSatScoreListItem?.let { Result.Success(it) }?:Result.Error(Exception("No SAT Score Found"))
+                val schoolSatScoreList=response.body()
+                if(schoolSatScoreList.isNullOrEmpty()){
+                    Result.Error(Exception("No SAT Score Found"))
+                } else {
+                    Result.Success(schoolSatScoreList.first())
+                }
             }else{
                 Result.Error(Exception("Failed to fetch SAT data: ${response.message()}"))
             }
