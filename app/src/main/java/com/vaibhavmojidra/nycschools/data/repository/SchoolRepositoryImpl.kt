@@ -10,7 +10,7 @@ import com.vaibhavmojidra.nycschools.domain.repository.SchoolRepository
 //Implementation of repository class to fetch data from remote data source using retrofit and returning in a structured format.
 class SchoolRepositoryImpl(private val schoolDataAPIService: SchoolDataAPIService) : SchoolRepository {
 
-    //To fetch school's list making retrofit call
+    //To fetch school's list making retrofit call.
     override suspend fun getSchoolList(): Result<SchoolList> {
         return try {
             val response = schoolDataAPIService.getSchoolList()

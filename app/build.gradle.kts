@@ -56,6 +56,7 @@ dependencies {
     val life_cycle_version="2.5.1"
     val retrofit_version = "2.9.0"
     val nav_version = "2.7.7"
+    val mockitoVersion="5.11.0"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -73,6 +74,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+
+
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$life_cycle_version")
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
@@ -81,9 +84,14 @@ dependencies {
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
+
     implementation("com.google.dagger:hilt-android:2.51")
     kapt("com.google.dagger:hilt-compiler:2.51")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    testImplementation("org.mockito:mockito-core:$mockitoVersion")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1-Beta")
 }
 kapt {
     correctErrorTypes = true
