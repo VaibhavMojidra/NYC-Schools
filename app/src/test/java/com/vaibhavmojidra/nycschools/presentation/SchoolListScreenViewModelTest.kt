@@ -32,7 +32,6 @@ class SchoolListScreenViewModelTest{
     fun testFetchSchoolList_Success()= runBlocking(CoroutineScope(Dispatchers.IO).coroutineContext){
         val mockSchoolList=SchoolList()
 
-        // This will mock the use case to return success
         `when`(mockGetSchoolListUseCase.invoke()).thenReturn(Result.Success(mockSchoolList))
 
         schoolListScreenViewModel.fetchSchoolList()
@@ -47,7 +46,6 @@ class SchoolListScreenViewModelTest{
     fun testFetchSchoolList_Error()= runBlocking(CoroutineScope(Dispatchers.IO).coroutineContext){
         val exception=Exception("Failed to fetch schools")
 
-        // This will mock the use case to return error
         `when`(mockGetSchoolListUseCase.invoke()).thenReturn(Result.Error(exception))
 
         schoolListScreenViewModel.fetchSchoolList()
