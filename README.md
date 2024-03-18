@@ -24,23 +24,23 @@ Introducing the NYC Schools App: an application that enables users to access inf
 
 ### Light Mode
 
-[![Vaibhav Mojidra - LightModeListScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/LightModeListScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - LightModeListScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/LightModeListScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 
-[![Vaibhav Mojidra - LightModeDetailScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/LightModeDetailScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - LightModeDetailScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/LightModeDetailScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 ### Dark Mode
 
-[![Vaibhav Mojidra - DarkModeListScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/DarkModeListScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - DarkModeListScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/DarkModeListScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 
-[![Vaibhav Mojidra - DarkModeDetailScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/DarkModeDetailScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - DarkModeDetailScreen.jpg](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/DarkModeDetailScreen.jpg "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 ## Unit Test Results
 
-[![Vaibhav Mojidra - UnitTestListScreenViewModel.PNG](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/UnitTestListScreenViewModel.PNG "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - UnitTestListScreenViewModel.PNG](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/UnitTestListScreenViewModel.PNG "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 
-[![Vaibhav Mojidra - UnitTestDetailScreenViewModel.PNG](https://github.com/VaibhavMojidra/NYC-Schools/master/screenshots/UnitTestDetailScreenViewModel.PNG "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
+[![Vaibhav Mojidra - UnitTestDetailScreenViewModel.PNG](https://github.com/VaibhavMojidra/NYC-Schools/blob/master/screenshots/UnitTestDetailScreenViewModel.PNG "Vaibhav Mojidra")](https://vaibhavmojidra.github.io/site/)
 
 
